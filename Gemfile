@@ -12,6 +12,7 @@ gem 'haml'
 gem 'sass'
 gem "paperclip", "~> 3.0"
 gem "aws-sdk"
+gem "friendly_id", "~> 4.0.9"
 
 gem 'sqlite3'
 
