@@ -1,5 +1,7 @@
 Yumhub::Application.routes.draw do
   
+  devise_for :users
+
   get "users/new"
 
   root to: 'home#index'

@@ -5,5 +5,10 @@
         %li= link_to "Home", '#'
         %li= link_to "Connect", '#'
         %li= link_to "Me", '#'
+        -if user_signed_in?
+          %li= link_to "Logout", destroy_user_session_path, :method => :delete
+        -else
+          %li= link_to "Login", new_user_session_path
+          %li= link_to "Sign Up", new_user_registration_path
       %form.navbar-search.pull-right
         %input.search-query.span2{:type => "text", :placeholder => "Search", "data-focus" => "false", :autocomplete => "off"}
