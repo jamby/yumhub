@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   attr_accessible :login
   attr_accessor :login
   
+  UNUSEABLE_USERNAMES = ["meals", "about"] 
+  
+  validate :username_useable?
   validates :username, presence: true, uniqueness: { case_sensitive: true }
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -21,6 +24,14 @@ class User < ActiveRecord::Base
       where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
     else
       where(conditions).first
+    end
+  end
+  
+  
+  # Username validation
+  def username_useable?
+    if UNUSEABLE_USERNAMES.include?(username.downcase)
+      errors.add(:username, "not valid.")
     end
   end
   
