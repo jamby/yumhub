@@ -2,7 +2,7 @@ Yumhub::Application.routes.draw do
   
   devise_for :users
   
-  resources :users, only: [:show]
+  resources :users, only: [:show], path: ''
 
   root to: 'home#index'
 
