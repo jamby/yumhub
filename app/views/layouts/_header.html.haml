@@ -1,0 +1,9 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %ul.nav
+        %li= link_to "Home", '#'
+        %li= link_to "Connect", '#'
+        %li= link_to "Me", '#'
+      %form.navbar-search.pull-right
+        %input.search-query.span2{:type => "text", :placeholder => "Search", "data-focus" => "false", :autocomplete => "off"}
