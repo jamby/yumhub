@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :login
   attr_accessor :login
   
-  UNUSEABLE_USERNAMES = ["meals", "about"] 
+  UNUSEABLE_USERNAMES = ["meals", "about", "login", "log_in", "signup", "sign_up", "signin", "sign_in", "logout", "log_out", "signout", "sign_out"] 
   
   validate :username_useable?
   validates :username, presence: true, uniqueness: { case_sensitive: true }
