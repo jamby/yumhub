@@ -12,10 +12,12 @@ Then(/^he should see a signup error message$/) do
 end
 
 When(/^the user submits valid user information$/) do
-  fill_in "Username", with: "testuser"
-  fill_in "Email", with: "testuser@gmail.com"
-  fill_in "Password", with: "test123"
-  fill_in "Password confirmation", with: "test123"
+  within('#signup') do
+    fill_in "user[username]", with: "testuser"
+    fill_in "user[email]", with: "testuser@gmail.com"
+    fill_in "user[password]", with: "test123"
+    fill_in "user[password_confirmation]", with: "test123"
+  end
 end
 
 Then(/^he should see the main page$/) do

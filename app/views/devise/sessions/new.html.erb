@@ -1,8 +1,8 @@
 <h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, html: {id: 'login'}, url: session_path(resource_name)) do |f| %>
   <div><%= f.label :login %>
-  <%= f.text_field :login, :autofocus => true %></div>
+  <%= f.text_field :login, autofocus: true, placeholder: "Username or email" %></div>
 
   <br />
 

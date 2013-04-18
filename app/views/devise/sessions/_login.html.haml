@@ -1,9 +1,9 @@
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, html: {id: 'login'}, url: session_path(resource_name)) do |f|
   %div
-    = f.text_field :login, :autofocus => true, :placeholder => "Username", :class => "textfieldwidth"
-  .form-horizontal
-    = f.password_field :password, :placeholder => "Password", style: "width:190px;"
-    = f.submit "Sign in", :class => "btn btn-primary", style: "margin-left:4px;"
+    = f.text_field :login, :autofocus => true, placeholder: "Username or email", class: "textfieldwidth"
+  #login_home_page.form-horizontal
+    = f.password_field :password, placeholder: "Password", style: "width:190px;"
+    = f.submit "Sign in", class: "btn btn-primary", style: "margin-left:4px;"
   - if devise_mapping.rememberable?
     = f.label :remember_me, style: "font-size:10px;", class: "checkbox" do
       = f.check_box :remember_me, style: "display:block"

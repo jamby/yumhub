@@ -17,15 +17,17 @@ Given(/^the user has an account$/) do
 end
 
 When(/^the user submits valid login username$/) do
-  fill_in "Password", with: @user.username
+  fill_in "user[login]", with: @user.username
 end
 
 When(/^the user submits valid login email$/) do
-  fill_in "Password", with: @user.email
+  fill_in "user[login]", with: @user.email
 end
 
 When(/^the user submits valid login password$/) do
-  fill_in "Password", with: @user.password
+  within('#login') do
+    fill_in "user[password]", with: @user.password
+  end
   click_button "Sign in"
 end
 
@@ -36,4 +38,12 @@ end
 
 Then(/^he should see a Logout link$/) do
   page.has_link?('Logout', href: destroy_user_session_path)
+end
+
+Given(/^a user visits the home page$/) do
+  visit root_path
+end
+
+Then(/^he should be redirected to the login page$/) do
+  page.current_path == user_session_path
 end
