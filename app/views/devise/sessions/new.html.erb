@@ -19,11 +19,3 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-<% unless flash[:alert].blank? %>
-  <div class="notifications center">
-    <div class="alert alert-error in fade">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= devise_error_messages! %>
-  </div>
-<% end %>

@@ -3,13 +3,25 @@
   %head
     %title YumHub
     = stylesheet_link_tag   "application", :media => "all"
-    = stylesheet_link_tag   "bootstrap", :media => "all"
-    = stylesheet_link_tag   "bootstrap-notify", :media => "all"
     = javascript_include_tag "application"
-    = javascript_include_tag "bootstrap"
-    = javascript_include_tag "bootstrap-notify"
     = csrf_meta_tags
   %body
     = render 'layouts/header'
+    - flash.each do |key, value| # Make this into a helper later!
+      - p key
+      - p value
+      - p value.nil?
+      .notifications.top-center
+        %div{class: "alert alert-#{key} in fade"}
+          %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+          -if value.is_a?(String)
+            = value
+          -else
+            -if value.nil?
+              = devise_error_messages
+            -else
+              - value.each do |msg|
+                %li
+                  = msg
     .container
       = yield

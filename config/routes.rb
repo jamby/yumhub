@@ -1,10 +1,20 @@
 Yumhub::Application.routes.draw do
-  
+
+  get "noms/show"
+
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'signup'}
   
-  resources :users, only: [:show], path: ''
+  resources :users, only: [:show], path: '' do
+    resources :noms
+  end
 
   root to: 'home#index'
+  
+  #match '/:username/noms/:id', to: 'noms#show', via: :get, as: user_nom
+  # <a href="<%= user_micropost_path(username: @user.username, id: micropost.id) %>">Whatever..</a>
+  
+  #post '/' => 'noms#create', :as => :nom_create
+  #match '/', to: 'noms#create', via: :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

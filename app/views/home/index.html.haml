@@ -1,12 +1,16 @@
 .row-fluid
-  .span4{style: "margin-top:50px;"}
+  .span4{style: "margin-top:50px;border:1px solid #000000;border-radius:4px;padding:3px 7px;"}
     -if user_signed_in?
-      %p
-        BLAR!
+      %h6
+      = render 'noms/create'
     -else
       %h6
       = render 'devise/sessions/login'
       %h4 New to YumHub? Sign up!
       = render 'devise/registrations/signup'
-  .span4.pull-right
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec fringilla nunc. Suspendisse vehicula hendrerit leo sed suscipit. In nec odio massa, et sollicitudin velit. In sollicitudin erat vitae leo cursus tristique. In tristique sem non arcu iaculis fermentum. Sed vel purus nisl. Etiam lorem neque, vulputate ut vestibulum non, vestibulum id lectus. Fusce ante lectus, sodales mattis vestibulum nec, ultricies sit amet erat. Curabitur pretium elit at justo consectetur molestie. Aenean tempor condimentum urna, nec luctus leo sagittis cursus. Nam justo nisl, hendrerit a aliquam sed, tempor ac dolor. Etiam pretium molestie hendrerit. Ut et velit non lorem pellentesque.
+  .span8.pull-right{style: "margin-top:50px;border:1px solid #000000;border-radius:4px;padding:3px 7px;"}
+    blar
+    - @noms.each do |nom|
+      %li
+        = nom.name
+        = nom.description
