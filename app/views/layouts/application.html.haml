@@ -8,9 +8,6 @@
   %body
     = render 'layouts/header'
     - flash.each do |key, value| # Make this into a helper later!
-      - p key
-      - p value
-      - p value.nil?
       .notifications.top-center
         %div{class: "alert alert-#{key} in fade"}
           %button.close{"data-dismiss" => "alert", :type => "button"} &times;
