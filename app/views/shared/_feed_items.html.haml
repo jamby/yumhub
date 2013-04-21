@@ -1,0 +1,5 @@
+- @noms.each do |nom|
+  %li
+    = link_to nom.user.slug, user_path(nom.user.slug)
+    = nom.name
+    = nom.description

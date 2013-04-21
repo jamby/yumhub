@@ -8,9 +8,7 @@
       = render 'devise/sessions/login'
       %h4 New to YumHub? Sign up!
       = render 'devise/registrations/signup'
-  .span8.pull-right{style: "margin-top:50px;border:1px solid #000000;border-radius:4px;padding:3px 7px;"}
-    blar
-    - @noms.each do |nom|
-      %li
-        = nom.name
-        = nom.description
+  .span8.pull-right.rightside_feed
+    = render 'shared/feed'
+    
+    %br
