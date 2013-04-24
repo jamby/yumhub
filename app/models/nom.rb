@@ -11,4 +11,6 @@ class Nom < ActiveRecord::Base
   validates :ingredients, presence: true
   validates :steps, presence: true
   validates :user_id, presence: true
+  
+  default_scope order: 'created_at DESC'
 end

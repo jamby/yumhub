@@ -9,6 +9,10 @@
       %h4 New to YumHub? Sign up!
       = render 'devise/registrations/signup'
   .span8.pull-right.rightside_feed
+    %h4{style: "display:inline-block;"} Noms!
+    %ul.nav.nav-pills.pull-right{style: "margin-top:5px;margin-bottom:-10px;"}
+      %li.active
+        %a{href: '#'} All
+      %li
+        %a{href: '#'} Followed
     = render 'shared/feed'
-    
-    %br

@@ -1,3 +1,10 @@
-%p
-  = current_user.username
-  = current_user.email
+.row-fluid
+  .span4{style: "margin-top:50px;border:1px solid #000000;border-radius:4px;padding:3px 7px;"}
+    -if current_user?(@user)
+      %h6
+      = render 'noms/create'
+    -else
+      User stuff here
+  .span8.pull-right.rightside_feed
+    %h4{style: "display:inline-block;"} #{determine_user_nom_header}
+    = render 'shared/feed'

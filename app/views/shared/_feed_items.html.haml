@@ -1,5 +1,10 @@
 - @noms.each do |nom|
-  %li
-    = link_to nom.user.slug, user_path(nom.user.slug)
-    = nom.name
-    = nom.description
+  %li.single_nom
+    .userimage_nom
+      = link_to image_tag("tempuserimage.png", alt: "user image"), user_path(nom.user.slug)
+    .info_nom
+      %strong= link_to nom.user.slug, user_path(nom.user.slug)
+      \-
+      %strong #{nom.name}
+      %div
+        = nom.description
