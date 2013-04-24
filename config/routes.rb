@@ -6,6 +6,11 @@ Yumhub::Application.routes.draw do
   
   resources :users, only: [:show], path: '' do
     resources :noms
+    resources :follows, only: [:create, :destroy]
+    member do
+      get :followers
+      get :following
+    end
   end
 
   root to: 'home#index'

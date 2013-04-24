@@ -13,6 +13,8 @@ gem 'sass'
 gem "paperclip", "~> 3.0"
 gem "aws-sdk"
 gem "friendly_id", "~> 4.0.9"
+gem "acts_as_follower"
+gem 'quiet_assets'
 
 gem 'sqlite3'
 

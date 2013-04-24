@@ -7,4 +7,5 @@ module UsersHelper
       @user.username + "'s Noms!"
     end
   end
+  
 end

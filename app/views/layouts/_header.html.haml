@@ -2,13 +2,13 @@
   .navbar-inner
     .container
       %ul.nav
-        %li= link_to "Home", root_path
-        %li= link_to "Connect", '#'
+        %li{class: active_header_links(["home", "index"])}= link_to "Home", root_path
+        %li{class: active_header_links(['#', '#'])}= link_to "Connect", '#'
         -if user_signed_in?
-          %li= link_to "Me", current_user
+          %li{class: active_header_links(['users', 'show'], ['users', 'following'], ['users', 'followers'])}= link_to "Me", current_user
           %li= link_to "Logout", destroy_user_session_path, :method => :delete
         -else
           %li= link_to "Login", new_user_session_path
           %li= link_to "Sign Up", new_user_registration_path
       %form.navbar-search.pull-right
-        %input.search-query.span2{:type => "text", :placeholder => "Search", "data-focus" => "false", :autocomplete => "off"}
+        %input.search-query.span2{type: "text", placeholder: "Search", "data-focus" => "false", autocomplete: "off"}

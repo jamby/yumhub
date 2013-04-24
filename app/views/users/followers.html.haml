@@ -1,0 +1,17 @@
+.row-fluid
+  .span4{style: "margin-top:50px;border:1px solid #000000;border-radius:4px;padding:3px 7px;"}
+    / -if current_user?(@user)
+    /   %h6
+    /   = render 'noms/create'
+    / -else
+    User stuff here!
+  .span8.pull-right.rightside_feed
+    %h4{style: "display:inline-block;"} Following
+    - if @followers.any?
+      %ul
+        = @user.followers_count
+        - @followers.each do |fl|
+          %li
+            = link_to fl.username, user_path(fl.username)
+    - else
+      You aren't following anyone.

@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   attr_accessible :login
   attr_accessor :login
   
+  acts_as_followable
+  acts_as_follower
+  
   has_many :noms
   
   UNUSEABLE_USERNAMES = ["meals", "about", "login", "log_in", "signup", "sign_up", "signin", "sign_in", "logout", "log_out", "signout", "sign_out"] 

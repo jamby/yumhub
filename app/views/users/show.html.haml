@@ -4,7 +4,10 @@
       %h6
       = render 'noms/create'
     -else
-      User stuff here
+      User stuff here!
+      .clearfix
+      %br
+      = render 'shared/follow_user', locals: { user: @user }
   .span8.pull-right.rightside_feed
     %h4{style: "display:inline-block;"} #{determine_user_nom_header}
     = render 'shared/feed'
