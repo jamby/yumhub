@@ -7,7 +7,8 @@
       User stuff here!
       .clearfix
       %br
-      = render 'shared/follow_user', locals: { user: @user }
+      #follow_user
+        = render 'shared/follow_user', locals: { user: @user }
   .span8.pull-right.rightside_feed
     %h4{style: "display:inline-block;"} #{determine_user_nom_header}
     = render 'shared/feed'

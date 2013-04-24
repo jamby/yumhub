@@ -1,6 +1,6 @@
 module ApplicationHelper
   def active_header_links(*args)
-    # MUst be passed in like [controller, action] for this logic to work
+    # Must be passed in like [controller, action] for this logic to work
     link_class = ''
     args.each do |arg|
       controller = arg[0]
