@@ -1,4 +1,6 @@
 class NomsController < ApplicationController
+  respond_to :html, :json
+  
   def new
     @nom = Nom.new
   end
@@ -6,13 +8,14 @@ class NomsController < ApplicationController
   def create
     @nom = current_user.noms.build(params[:nom])
     if @nom.save
-      flash[:success] = "Nom created!"
-      redirect_to root_path
+      flash.now[:success] = "Nom created!"
 		else
-      flash[:error] = @nom.errors.full_messages
+      flash.now[:error] = @nom.errors.full_messages
       @noms = Nom.all
-      redirect_to root_path
 		end
+		respond_to do |format|
+      format.js
+    end
   end
   
   def show

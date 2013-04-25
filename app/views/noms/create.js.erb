@@ -1,0 +1,9 @@
+$("#flash_messages").html("<%= escape_javascript(render partial: 'layouts/flash_messages', locals: {flash: flash}) %>")
+
+if ("<%= @nom.name %>" && "<%= @nom.category %>" && "<%= @nom.category %>" && "<%= @nom.ingredients %>" && "<%= @nom.steps %>") {
+  $("#nom_name").val('')
+  $("#nom_category").val('')
+  $("#nom_description").val('')
+  $("#nom_ingredients").val('')
+  $("#nom_steps").val('')
+}

@@ -1,7 +1,7 @@
-= form_for [current_user, @nom] do |f|
+= form_for [current_user, @nom], remote: true do |f|
   = f.text_field :name, placeholder: "Name", class: "span12"
   = f.select :category, options_for_select(Nom::CATEGORY, @nom.category), {prompt: "Category"}, {class: "span12"}
   = f.text_area :description, placeholder: "Description", rows: "5", class: "span12 only_vertical"
   = f.text_area :ingredients, placeholder: "Ingredients", rows: "5", class: "span12 only_vertical"
   = f.text_area :steps, placeholder: "Steps", rows: "5", class: "span12 only_vertical"
-  = f.submit "Post", class: "btn btn-primary"
+  = f.submit "Post", class: "btn btn-primary post_nom"

@@ -38,5 +38,5 @@ end
 
 Then(/^the user should see "(.+)" as a flash$/) do |flashed|
   page.has_content?('div.alert')
-  page.has_content?("Nom created!")
+  page.has_content?(flashed)
 end
