@@ -25,13 +25,13 @@ When(/^the user submits the post$/) do
 end
 
 Then(/^the user should see "(.+)" in the main feed$/) do |user_created|
-  within('.nom_feed') do
+  within('#nom_feed') do
     page.has_content?(user_created)
   end
 end
 
 Then(/^the user should see their username in the main feed$/) do
-  within('.nom_feed') do
+  within('#nom_feed') do
     page.has_content?(@user.username)
   end
 end

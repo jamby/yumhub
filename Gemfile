@@ -36,6 +36,7 @@ gem 'jquery-rails'
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 # To use ActiveModel has_secure_password

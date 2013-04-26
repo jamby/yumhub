@@ -1,4 +1,5 @@
 .clearfix
-- if @noms.any?
-  %ul.nom_feed
-    = render 'shared/feed_items', collection: @noms
+%ul#nom_feed
+  - if @noms.any?
+    - @noms.each do |nom|
+      = render 'shared/feed_items', nom: nom

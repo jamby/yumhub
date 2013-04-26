@@ -1,3 +1,4 @@
+@javascript
 Feature: Posting
 
   Scenario: Successful post

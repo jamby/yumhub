@@ -6,4 +6,6 @@ if ("<%= @nom.name %>" && "<%= @nom.category %>" && "<%= @nom.category %>" && "<
   $("#nom_description").val('')
   $("#nom_ingredients").val('')
   $("#nom_steps").val('')
+
+  $("<%= escape_javascript(render partial: 'shared/feed_items', locals: {nom: @nom}) %>").prependTo("#nom_feed").hide().slideDown()
 }
