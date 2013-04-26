@@ -14,4 +14,4 @@
           %li
             = link_to fl.username, user_path(fl.username)
     - else
-      You aren't following anyone.
+      = determine_user_no_following

@@ -6,7 +6,7 @@
     / -else
     User stuff here!
   .span8.pull-right.rightside_feed
-    %h4{style: "display:inline-block;"} Following
+    %h4{style: "display:inline-block;"} Followers
     - if @followers.any?
       %ul
         = @user.followers_count
@@ -14,4 +14,4 @@
           %li
             = link_to fl.username, user_path(fl.username)
     - else
-      You aren't following anyone.
+      = determine_user_no_followers
